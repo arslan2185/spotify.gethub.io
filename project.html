@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>project</title>
+	<!--css link -->
+	<link rel="stylesheet" href="project.css">
+
+</head>
+
+<body>
+	<!--header and nav-->
+	<header>
+		<div id="logo">
+			<img src="image/image.png" alt="logo">
+		</div>
+		<nav>
+			<ul>
+				<li><a href="#"><i class="fa-solid fa-house"></i></a></li>
+				<li><input type="text" alt="sreach" name="sreach1.page1" placeholder="sreach" id="myInput">
+				</li>
+				<li><button id="btn">sign up</button></li>
+				<li><button id="button">log in</button></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!--aside and footer-->
+	<div id="page" name="page1">
+		<aside>
+			<div>
+				<h1 id="head">Your Library</h1>
+			</div>
+			<div id="playlist">
+				<div id="playlist1">
+					<h1>Create your first playlist</h1>
+					<p>It's easy,we'll help you</p>
+					<button id="playlist_btn">Create playlist</button>
+				</div>
+				<div id="playlist2">
+					<h1>Create your first playlist</h1>
+					<p>It's easy,we'll help you</p>
+					<button id="playlist_btn">Create playlist</button>
+				</div>
+			</div>
+			<div id="footer">
+				<span>Legal</span><span>Safety&Privacy Center</span><span>Privacy Policy</span><span>Cookies</span>
+				<span>About Ads</span><span>Accessibility</span><span>Cookies</span><br>
+				<button type="button" id="button">
+					<select name="select1" id="select">
+						<option value="">English</option>
+						<option value="">Urdu</option>
+						<option value="">Punjabi</option>
+						<option value="">Francais</option>
+						<option value="">Persion</option>
+						<option value="">Italiano</option>
+						<option value="">Turkish</option>
+						<option value="">Chinese</option>
+					</select>
+				</button>
+			</div>
+		</aside>
+
+		<!--section-->
+		<section>
+			<p class="p">Populer artists</p>
+			<div id="singer">
+				<img src="image/image2.jpg" alt="image"><i id="1" class="far itemsong fa-play-circle"></i>
+				<img src="image/image5.jpg" alt="image"><i id="2" class="far itemsong fa-play-circle"></i>
+				<img src="image/image1.jpg" alt="image"><i id="3" class="far itemsong fa-play-circle"></i>
+				<img src="image/image6.jpg" alt="image"><i id="4" class="far itemsong fa-play-circle"></i>
+				<img src="image/image7.jpg" alt="image"><i id="5" class="far itemsong fa-play-circle"></i>
+			</div>
+			<p class="p">Populer albums</p>
+			<div id="singer1">
+				<div class="playlistitem">
+					<a href="#" id="1" class="item"><img src="image/image8.jpg" alt="image"
+							class="songitemplay"></a><span><i id="0" class="far fa-play-circle playitem"></i></span>
+					<p class="songname">song 1</p>
+				</div>
+				<div class="playlistitem">
+					<a href="#" id="2" class="item"><img src="image/image9.jpg" alt="image"
+							class="songitemplay"></a><span><i id="1" class="far fa-play-circle playitem"></i></span>
+					<p class="songname">song 2</p>
+				</div>
+				<div class="playlistitem">
+					<a href="#" id="3" class="item"><img src="image/image10.jpg" alt="image"
+							class="songitemplay"></a><span><i id="2" class="far fa-play-circle playitem"></i></span>
+					<p class="songname">song 3</p>
+				</div>
+				<div class="playlistitem">
+					<a href="#" id="4" class="item"><img src="image/image2.jpg" alt="image"
+							class="songitemplay"></a><span><i id="3" class="far fa-play-circle playitem"></i></span>
+					<p class="songname">song 4</p>
+				</div>
+				<div class="playlistitem">
+					<a href="#" id="5" class="item"><img src="image/image1.jpg" alt="image"
+							class="songitemplay"></a><span><i id="4" class="far fa-play-circle playitem"></i></span>
+					<p class="songname">song 5</p>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<!--song item-->
+	<div id="songplay">
+		<div class="slider">
+			<input type="range" name="range1" id="range" value="0">
+		</div>
+		<div id="masterplay">
+			<i class="fa-solid fa-backward" id="backplay"></i>
+			<i class="far fa-play-circle" id="word"></i>
+			<i class="fa-solid fa-forward" id="forward"></i>
+		</div>
+		<div id="masterplay1">
+			<p id="text">love the song</p>
+			<img src="image/image4.gif" alt="image" height="18px" id="gif">
+		</div>
+
+	</div>
+
+	<!--js link-->
+	<script src="https://kit.fontawesome.com/f722e54f66.js"></script>
+	<script src="data.js"></script>
+	<script>
+
+
+		console.log("welcome to spotfy")
+		let songIndex = 0;
+		let word = document.getElementById("word");
+		let gif = document.getElementById("gif");
+		let range = document.querySelector('#range');
+		let playlist = document.getElementById("playlist");
+		let playlistitem = Array.from(document.getElementsByClassName('playlistitem'))
+		let text = document.getElementById('text')
+
+		let song = [
+			{ songname: "jeena jeena ", filepath: "song audio/8.mp3", coverpath: "image/image8.jpg" },
+			{ songname: "salam-e-isqe ", filepath: "song audio/7.mp3", coverpath: "image/image9.jpg" },
+			{ songname: "jeena jeena ", filepath: "song audio/9.mp3", coverpath: "image/image10.jpg" },
+			{ songname: "Baarish by Atif Aslam", filepath: "song audio/3.mp3", coverpath: "image/image1.jpg" },
+			{ songname: "kaise-bhula-dun-ashir", filepath: "song audio/5.mp3", coverpath: "image/image2.jpg" },
+			{ songname: "salam-e-isqe", filepath: "song/1.mp3", coverpath: "image/image3.jpg" },
+			{ songname: "love the pakistan", filepath: "song/2.mp3", coverpath: "image/image4.jpg" },
+			{ songname: "Kesariya - Brahmastra", filepath: "song/4.mp3", coverpath: "image/image5.jpg" },
+			{ songname: "Woh Mere Bin - Atif Aslam ", filepath: "song/5.mp3", coverpath: "image/image6.jpg" }
+		]
+		playlistitem.forEach((element, i) => {
+			console.log(element, i);
+			element.getElementsByTagName("img")[0].src = song[i].coverpath;
+			element.getElementsByClassName('songname')[0].innerHTML = song[i].songname;
+		})
+
+		let audioElement = new Audio("song audio/3.mp3");
+		word.addEventListener("click", () => {
+			if (audioElement.paused || audioElement.currentTime <= 0) {
+				audioElement.play();
+				word.classList.remove('fa-play-circle');
+				word.classList.add('fa-pause-circle')
+				gif.style.opacity = "1";
+			}
+			else {
+				audioElement.pause();
+				word.classList.remove('fa-pause-circle');
+				word.classList.add('fa-play-circle')
+				gif.style.opacity = "0";
+			}
+		})
+		audioElement.addEventListener('timeupdate', () => {
+			let value = (audioElement.currentTime / audioElement.duration) * 100;
+			if(isNaN(audioElement.duration)){
+				value = 0;
+			}
+			range.value = value;
+		})
+		range.addEventListener('input',(e)=>{
+			audioElement.currentTime = e.target.value /100*audioElement.duration  ; 
+			range.value = e.target.value; 
+
+		})
+		// audioElement.addEventListener('change', vidseek, false);
+		// range.addEventListener('timeupdate', seekTo, false)
+		// function vidseek() {
+		// 	var seekto = audioElement.duration * (range.value / 100);
+		// 	audioElement.currentTime = seekto;
+		// }
+		// function seekTo() {
+		// 	var nt = audioElement.currentTime * (100 / audioElement.duration);
+		// 	range.value = nt;
+		// 	if (range.ended) {
+		// 		btn.className = "play";
+		// 	}
+		// }
+
+
+		const makeAllPlays = () => {
+			Array.from(document.getElementsByClassName('playitem')).forEach((element) => {
+				element.classList.remove("fa-pause-circle");
+				element.classList.add("fa-play-circle");
+
+			})
+		}
+
+		Array.from(document.getElementsByClassName('playitem')).forEach(element => {
+			element.addEventListener('click', (e) => {
+				makeAllPlays();
+				songIndex = parseInt(e.target.id);
+				e.target.classList.remove("fa-play-circle");
+				e.target.classList.add("fa-pause-circle");
+				audioElement.src = `song audio/${songIndex + 1}.mp3`;
+				text.innerHTML = song[songIndex].songname;
+				audioElement.play();
+				audioElement.currentTime = 0;
+				gif.style.opacity = "1";
+				word.classList.remove('fa-play-circle');
+				word.classList.add('fa-pause-circle');
+			});
+		})
+
+		document.getElementById('forward').addEventListener('click', () => {
+			if (songIndex >= 9) {
+				songIndex = 0;
+			}
+			else {
+				songIndex += 1;
+			}
+			audioElement.src = `song audio/${songIndex + 1}.mp3`;
+			text.innerHTML = song[songIndex].songname;
+			audioElement.currentTime = 0;
+			audioElement.play();
+			word.classList.remove('fa-play-circle');
+			word.classList.add('fa-pause-circle');
+		})
+		document.getElementById('backplay').addEventListener('click', () => {
+			if (songIndex <= 0) {
+				songIndex = 0;
+			} else {
+				songIndex -= 1;
+			}
+			audioElement.src = `song audio/${songIndex + 1}.mp3`;
+			text.innerHTML = song[songIndex].songname;
+			audioElement.currentTime = 0;
+			audioElement.play();
+			word.classList.remove('fa-play-circle');
+			word.classList.add('fa-pause-circle');
+		})
+		const makeAllPlays1 = () => {
+			Array.from(document.getElementsByClassName('itemsong')).forEach((element) => {
+				element.classList.remove("fa-pause-circle");
+				element.classList.add("fa-play-circle");
+
+			})
+		}
+		const resetRange = () => {
+			range.value = 0;
+		}
+		Array.from(document.getElementsByClassName('itemsong')).forEach((element, index) => {
+			element.addEventListener('click', (e) => {
+				audioElement.currentTime = 0;
+				audioElement.src = `song audio/${index + 1}.mp3`;
+				resetRange();
+				audioElement.play();
+				makeAllPlays1();
+
+				songIndex = parseInt(e.target.id);
+				e.target.classList.remove("fa-play-circle");
+				e.target.classList.add("fa-pause-circle");
+				gif.style.opacity = "1";
+				word.classList.remove('fa-play-circle');
+				word.classList.add('fa-pause-circle');
+			});
+		})
+
+
+	</script>
+</body>
+
+</html>
